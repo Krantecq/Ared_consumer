@@ -19,7 +19,7 @@ import * as Animatable from 'react-native-animatable';
 const NewLoginScreen = ({navigation}) => {
   return (
     <View style={styles.container}>
-      <StatusBar backgroundColor={'transparent'} />
+      <StatusBar backgroundColor={'transparent'} barStyle={'dark-content'} />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.imageContainer}>
           <View style={styles.equalContainer}>

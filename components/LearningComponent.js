@@ -59,6 +59,9 @@ const RenewableProjectList = ({data}) => {
       keyExtractor={item => item.id.toString()}
       bounces={true}
       contentContainerStyle={styles.flatListContent}
+      disableVirtualization={true}
+      scrollEnabled={false}
+      nestedScrollEnabled={true}
     />
   );
 };

@@ -16,7 +16,7 @@ const Splash = () => {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      navigation.replace('NewOnboardingScreen');
+      navigation.replace('NewLoginScreen');
     }, 3000);
 
     return () => clearTimeout(timer);

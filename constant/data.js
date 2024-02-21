@@ -512,13 +512,15 @@ export const blog = [
     title: 'Don’t destroy greenery and don’t spoil scenery',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim',
-  },{
+  },
+  {
     id: '2',
     image: image.blog2,
     title: 'Don’t destroy greenery and don’t spoil scenery',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim',
-  },{
+  },
+  {
     id: '3',
     image: image.blog3,
     title: 'Don’t destroy greenery and don’t spoil scenery',

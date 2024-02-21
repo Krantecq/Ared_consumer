@@ -1,3 +1,5 @@
+/* eslint-disable react-native/no-inline-styles */
+/* eslint-disable react/no-unstable-nested-components */
 import React, {useState, useEffect} from 'react';
 import {
   SafeAreaView,
@@ -109,7 +111,7 @@ const NewOnboardingScreen = ({navigation}) => {
             left: SIZES.width * 0.051,
             shadowColor: '#000',
             shadowOffset: {width: 0, height: 0},
-            shadowOpacity: 0.,
+            shadowOpacity: 0,
             shadowRadius: 6,
           }}>
           <TouchableOpacity

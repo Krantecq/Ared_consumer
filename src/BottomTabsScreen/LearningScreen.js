@@ -6,6 +6,7 @@ import {
   StatusBar,
   TextInput,
   TouchableOpacity,
+  ScrollView,
 } from 'react-native';
 import React, {useState} from 'react';
 import {COLORS, SIZES} from '../../constant';
@@ -17,16 +18,18 @@ const LearningScreen = () => {
   console.log(Learning);
   return (
     <SafeAreaView style={styles.container}>
-      <StatusBar backgroundColor={'transparent'} />
+      <StatusBar backgroundColor={COLORS.white} barStyle={'dark-content'} />
       <View>
         <TopNavbar />
       </View>
       <View style={styles.titleContainer}>
         <Text style={styles.title}>Explore Rewards</Text>
       </View>
-      <View style={{marginHorizontal: SIZES.width * 0.039}}>
-        <LearningComponent data={Associate} />
-      </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{marginHorizontal: SIZES.width * 0.039}}>
+          <LearningComponent data={Associate} />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
