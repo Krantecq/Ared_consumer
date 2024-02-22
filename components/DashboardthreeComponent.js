@@ -1,6 +1,5 @@
 import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
-import {COLORS, SIZES} from '../constant';
 import {useNavigation} from '@react-navigation/native';
 import image from '../constant/image';
 
@@ -24,11 +23,21 @@ const data = [
 
 const DashboardthreeComponent = () => {
   const navigation = useNavigation();
+  const handleNavigation = item => {
+    if (item.id === '1') {
+      navigation.navigate('ActScreen');
+    } else if (item.id === '2') {
+      navigation.navigate('ImpactScreen');
+    } else navigation.navigate('ReportScreen');
+  };
   return (
     <View style={styles.container}>
       {data.map((item, index) => {
         return (
-          <TouchableOpacity key={index} style={styles.mainContainer}>
+          <TouchableOpacity
+            key={index}
+            style={styles.mainContainer}
+            onPress={() => handleNavigation(item)}>
             <View style={{width: 35, height: 35, marginTop: 15}}>
               <Image
                 source={item.image}

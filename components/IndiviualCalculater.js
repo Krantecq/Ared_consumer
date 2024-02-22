@@ -58,7 +58,6 @@ const IndiviualCalculater = () => {
     navigation.navigate('ProjectScreen');
   };
 
-
   if (result === true) {
     return (
       <SafeAreaView style={styles.container}>

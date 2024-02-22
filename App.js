@@ -22,6 +22,7 @@ import CustomeScreen from './src/BottomTabsScreen/CustomeScreen';
 import CarbonCalculater from './src/BottomTabsScreen/CarbonCalculater';
 import NewScreen from './src/BottomTabsScreen/NewScreen';
 import SingleNewScreen from './src/BottomTabsScreen/SingleNewScreen';
+import ActScreen from './src/BottomTabsScreen/ActScreen';
 
 const Stack = createStackNavigator();
 

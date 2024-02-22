@@ -528,3 +528,93 @@ export const blog = [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim',
   },
 ];
+
+export const Act = [
+  {
+    id: '1',
+    image: image.act1,
+    title: 'Trees planted',
+    point: 46,
+  },
+  {
+    id: '2',
+    image: image.act2,
+    title: 'of Gasoline',
+    point: 428,
+  },
+  {
+    id: '3',
+    image: image.act3,
+    title: 'smartphones worth charging power',
+    point: 127000,
+  },
+  {
+    id: '4',
+    image: image.act4,
+    title: 'Diesel car drive',
+    point: 60000,
+  },
+  {
+    id: '5',
+    image: image.act5,
+    title: 'Refrigerators Worth/n Emission for a year',
+    point: 11,
+  },
+  {
+    id: '6',
+    image: image.act6,
+    title: 'BBQ propane tanks',
+    point: 40,
+  },
+  {
+    id: '7',
+    image: image.act7,
+    title: 'Fueling up an SUV',
+    point: 46,
+  },
+  {
+    id: '8',
+    image: image.act8,
+    title: 'Worth of emission from\n Amsterdam to Rome',
+    point: 72,
+  },
+  {
+    id: '9',
+    image: image.act9,
+    title: 'Fire extinguishers',
+    point: 500,
+  },
+];
+
+export const report = [
+  {
+    id: '1',
+    image: image.report1,
+    title: 'Trees planted',
+    point: 900,
+  },
+  {
+    id: '2',
+    image: image.report2,
+    title: 'Solar installed',
+    point: 12,
+  },
+  {
+    id: '3',
+    image: image.report1,
+    title: 'Trees planted',
+    point: 900,
+  },
+  {
+    id: '4',
+    image: image.report2,
+    title: 'Solar installed',
+    point: 12,
+  },
+  {
+    id: '4',
+    image: image.report2,
+    title: 'Solar installed',
+    point: 12,
+  },
+];

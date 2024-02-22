@@ -77,7 +77,7 @@ const SingleNewScreen = ({route, navigation}) => {
               style={{
                 position: 'absolute',
                 left: 25,
-                bottom: SIZES.width * 0.08,
+                bottom: SIZES.width * 0.05,
                 width: '95%',
               }}>
               <Text style={styles.title}>{data.title}</Text>
@@ -89,6 +89,24 @@ const SingleNewScreen = ({route, navigation}) => {
         </View>
         <View style={{marginHorizontal: SIZES.width * 0.051, marginTop: 20}}>
           <Text style={styles.description}>
+            Et morbi vitae lobortis nam odio. Faucibus vitae vel neque nullam in
+            in lorem platea mattis. Euismod aenean rhoncus scelerisque amet
+            tincidunt scelerisque aliquam. Luctus porttitor elit vel sapien,
+            accumsan et id ut est. Posuere molestie in turpis quam. Scelerisque
+            in viverra mi ut quisque. In sollicitudin sapien, vel nulla quisque
+            vitae. Scelerisque eget accumsan, non in. Posuere magna erat
+            bibendum amet, nisi eu id.
+          </Text>
+          <Text style={[styles.description, {marginTop: 20}]}>
+            Et morbi vitae lobortis nam odio. Faucibus vitae vel neque nullam in
+            in lorem platea mattis. Euismod aenean rhoncus scelerisque amet
+            tincidunt scelerisque aliquam. Luctus porttitor elit vel sapien,
+            accumsan et id ut est. Posuere molestie in turpis quam. Scelerisque
+            in viverra mi ut quisque. In sollicitudin sapien, vel nulla quisque
+            vitae. Scelerisque eget accumsan, non in. Posuere magna erat
+            bibendum amet, nisi eu id.
+          </Text>
+          <Text style={[styles.description, {marginTop: 20}]}>
             Et morbi vitae lobortis nam odio. Faucibus vitae vel neque nullam in
             in lorem platea mattis. Euismod aenean rhoncus scelerisque amet
             tincidunt scelerisque aliquam. Luctus porttitor elit vel sapien,

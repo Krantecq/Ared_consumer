@@ -1,5 +1,5 @@
-/* eslint-disable react-native/no-inline-styles */
 /* eslint-disable react/no-unstable-nested-components */
+/* eslint-disable react-native/no-inline-styles */
 import React, {useState, useEffect} from 'react';
 import {
   SafeAreaView,
@@ -13,23 +13,49 @@ import {
   TouchableOpacity,
   Animated,
   FlatList,
-  ImageBackground,
 } from 'react-native';
 import {COLORS, SIZES} from '../../constant';
 const {width, height} = Dimensions.get('window');
 import Svg, {G, Circle, Rect} from 'react-native-svg';
 import Icon from 'react-native-vector-icons/AntDesign';
-import {slides} from '../../constant/data';
+
+export const slides = [
+  {
+    id: '2',
+    image: require('../../assets/images/img-1.png'),
+    title: 'Track Your Impact',
+    description: 'Calculate your\ncarbon footprints seamlessly.',
+  },
+  {
+    id: '1',
+    image: require('../../assets/images/img-2.png'),
+    title: 'Explore Sustainable Projects',
+    description:
+      'Neutralise your carbon footprints by investing in global sustainability projects',
+  },
+
+  {
+    id: '3',
+    image: require('../../assets/images/img-3.png'),
+    title: 'Track Your Impact',
+    description:
+      'Your action will make a significant impact on the environment.',
+  },
+];
 
 const NewOnboardingScreen = ({navigation}) => {
   const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
-  const ref = React.useRef();
+  const [animatedOffset] = useState(new Animated.Value(0));
+
+  console.log('Se', SIZES.width * 0.9);
 
   const size = SIZES.width * 0.24;
   const strokeWidth = 2;
   const center = size / 2;
   const radius = size / 2 - strokeWidth / 2;
   const circumference = 2 * Math.PI * radius;
+
+  const ref = React.useRef();
 
   const updateCurrentSlideIndex = e => {
     const contentOffsetX = e.nativeEvent.contentOffset.x;
@@ -41,6 +67,7 @@ const NewOnboardingScreen = ({navigation}) => {
     const nextSlideIndex = currentSlideIndex + 1;
     if (nextSlideIndex != slides.length) {
       const offset = nextSlideIndex * width;
+      console.log('offset', offset);
       ref?.current.scrollToOffset({offset});
       setCurrentSlideIndex(currentSlideIndex + 1);
     } else {
@@ -65,34 +92,31 @@ const NewOnboardingScreen = ({navigation}) => {
         <View style={styles.imageContainer}>
           <Image
             source={item?.image}
-            style={{width: '100%', height: '100%', resizeMode: 'contain'}}
+            style={{width: '95%', height: '100%', resizeMode: 'contain'}}
           />
         </View>
         <View style={styles.spaceContainer} />
-        <View style={styles.circleContainer2}>
-          <ImageBackground
-            source={require('../../assets/images/rect.png')}
-            style={styles.circleContainer}>
-            <View
-              style={{
-                marginHorizontal: SIZES.width * 0.06,
-                position: 'absolute',
-                top: 230,
-              }}>
-              <View style={{marginBottom: SIZES.width * 0.26}}>
-                <Text
-                  style={{
-                    fontFamily: 'skia',
-                    fontSize: SIZES.width * 0.08,
-                    lineHeight: SIZES.width * 0.12,
-                    color: '#1D493E',
-                    fontWeight: '100',
-                  }}>
-                  {item?.description}
-                </Text>
-              </View>
+
+        <View style={styles.circleContainer}>
+          <View
+            style={{
+              marginHorizontal: SIZES.width * 0.06,
+              position: 'absolute',
+              top: 250,
+            }}>
+            <View style={{marginBottom: SIZES.width * 0.26}}>
+              <Text
+                style={{
+                  fontFamily: 'skia',
+                  fontSize: SIZES.width * 0.08,
+                  lineHeight: SIZES.width * 0.12,
+                  color: '#1D493E',
+                  fontWeight: '100',
+                }}>
+                {item?.description}
+              </Text>
             </View>
-          </ImageBackground>
+          </View>
         </View>
       </View>
     );
@@ -109,10 +133,6 @@ const NewOnboardingScreen = ({navigation}) => {
             justifyContent: 'center',
             bottom: SIZES.width * 0.18,
             left: SIZES.width * 0.051,
-            shadowColor: '#000',
-            shadowOffset: {width: 0, height: 0},
-            shadowOpacity: 0,
-            shadowRadius: 6,
           }}>
           <TouchableOpacity
             activeOpacity={0.8}
@@ -132,6 +152,8 @@ const NewOnboardingScreen = ({navigation}) => {
         </View>
       );
     }
+
+    // Original circle design
     return (
       <View
         style={{
@@ -173,24 +195,22 @@ const NewOnboardingScreen = ({navigation}) => {
   };
 
   return (
-    <View style={styles.container}>
-      <StatusBar backgroundColor="red" />
-      <View style={{flex: 0.05, backgroundColor: '#fff'}}></View>
-      <View style={{flex: 0.95, backgroundColor: '#fff'}}>
-        <FlatList
-          ref={ref}
-          onMomentumScrollEnd={updateCurrentSlideIndex}
-          // contentContainerStyle={{height: height}}
-          showsHorizontalScrollIndicator={false}
-          horizontal
-          data={slides}
-          pagingEnabled
-          bounces={false}
-          renderItem={({item}) => <Slide item={item} />}
-        />
-        <Footer />
-      </View>
-    </View>
+    <SafeAreaView style={styles.container}>
+      <StatusBar backgroundColor="white" />
+
+      <FlatList
+        ref={ref}
+        onMomentumScrollEnd={updateCurrentSlideIndex}
+        contentContainerStyle={{height: height}}
+        showsHorizontalScrollIndicator={false}
+        horizontal
+        data={slides}
+        pagingEnabled
+        bounces={false}
+        renderItem={({item}) => <Slide item={item} />}
+      />
+      <Footer />
+    </SafeAreaView>
   );
 };
 
@@ -199,34 +219,30 @@ export default NewOnboardingScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: 'white',
   },
-
   mainContainer: {
+    height: SIZES.height,
     width: width,
   },
   spaceContainer: {
     height: '25%',
-    backgroundColor: '#fff',
   },
   circleContainer: {
-    height: '100%',
-    width: '100%',
-    resizeMode: 'contain',
+    height: '75%',
+    backgroundColor: '#33FF9B',
+    position: 'relative',
+    borderTopRightRadius: SIZES.width * 0.83,
     justifyContent: 'center',
   },
-  circleContainer2: {
-    height: '100%%',
-    position: 'relative',
-  },
   imageContainer: {
-    width: '76%',
-    height: '35%',
+    width: '70%',
+    height: '50%',
     position: 'absolute',
     left: SIZES.width * 0.15,
-    top: SIZES.width * 0.38,
+    top: SIZES.width * 0.17,
     zIndex: 1,
-    // backgroundColor:'grey'
+    // backgroundColor: '#000',
   },
   btn: {
     position: 'absolute',

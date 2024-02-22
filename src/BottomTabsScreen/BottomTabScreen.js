@@ -22,6 +22,9 @@ import LearningScreen from './LearningScreen';
 import AboutScreen from './AboutScreen';
 import LegalScreen from './LegalScreen';
 import {SIZES} from '../../constant';
+import ActScreen from './ActScreen';
+import ReportScreen from './ReportScreen';
+import ImpactScreen from './ImpactScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -65,6 +68,9 @@ const Homestack = () => {
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="DashboardScreen" component={DashboardScreen} />
+      <Stack.Screen name="ActScreen" component={ActScreen} />
+      <Stack.Screen name="ReportScreen" component={ReportScreen} />
+      <Stack.Screen name="ImpactScreen" component={ImpactScreen} />
     </Stack.Navigator>
   );
 };
