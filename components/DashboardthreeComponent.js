@@ -1,4 +1,11 @@
-import {StyleSheet, Text, View, TouchableOpacity, Image} from 'react-native';
+import {
+  StyleSheet,
+  Text,
+  View,
+  TouchableOpacity,
+  Image,
+  Platform,
+} from 'react-native';
 import React from 'react';
 import {useNavigation} from '@react-navigation/native';
 import image from '../constant/image';
@@ -38,7 +45,12 @@ const DashboardthreeComponent = () => {
             key={index}
             style={styles.mainContainer}
             onPress={() => handleNavigation(item)}>
-            <View style={{width: 35, height: 35, marginTop: 15}}>
+            <View
+              style={{
+                width: Platform.OS === 'ios' ? 30 : 35,
+                height: Platform.OS === 'ios' ? 30 : 35,
+                marginTop: 15,
+              }}>
               <Image
                 source={item.image}
                 style={{width: '100%', height: '100%', resizeMode: 'contain'}}

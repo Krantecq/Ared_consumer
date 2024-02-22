@@ -40,7 +40,7 @@ const DashboardthreeComponent = () => {
             />
             <View style={{marginTop: 10}}>
               <Text style={styles.boxTitle}>{box.title}</Text>
-              <Text style={styles.boxSubtitle}>{box.description}</Text>
+              <Text style={styles.boxSubtitle} numberOfLines={2}>{box.description}</Text>
             </View>
           </TouchableOpacity>
         ))}

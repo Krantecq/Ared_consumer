@@ -60,7 +60,7 @@ const NewScreen = ({navigation}) => {
                 </View>
                 <View style={{marginTop: 10}}>
                   <Text style={styles.boxTitle}>{item.title}</Text>
-                  <Text style={styles.boxSubtitle}>{item.description}</Text>
+                  <Text style={styles.boxSubtitle} numberOfLines={2}>{item.description}</Text>
                 </View>
               </TouchableOpacity>
             );

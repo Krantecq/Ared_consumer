@@ -29,7 +29,8 @@ const DashboardScreen = ({navigation}) => {
         source={image.bg1}
         style={{flex: 1}}
         imageStyle={styles.bg1}>
-        <View>
+        <View
+          style={{marginTop: Platform.OS === 'ios' ? SIZES.width * 0.13 : 0}}>
           <Image source={images.bg2} style={styles.bg2} />
         </View>
         <ScrollView showsVerticalScrollIndicator={false}>
